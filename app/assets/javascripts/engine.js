@@ -11,13 +11,17 @@ var game_engine = function () {
 	// Time remaining to finish casting the current spell
 	_private.time_remaining = $('#spell_time_left');
 
-	// ATB update frequency (ms)
-	_private.timer_frequency = 1000;
+	// ATB update frequency
+	_private.timer_frequency = 500; // ms
+	_private.timer_timestep = 7.5; // #todo math
 
-	_private.process_incantation = function (spell) {
+	_public.cast_spell = function (spell) {
+		_private.incantation_display.text(spell.incantation);
+		_private.spell_input.focus();
+
 		var time_left = spell.casting_time;
 		var timer = setInterval(function () {
-			time_left -= 15;
+			time_left -= _private.timer_timestep;
 
 			_private.time_remaining.text(time_left);
 
@@ -29,13 +33,6 @@ var game_engine = function () {
 				clearInterval(timer);
 			}
 		}, _private.timer_frequency);
-	}
-
-	_public.cast_spell = function (spell) {
-		_private.incantation_display.text(spell.incantation);
-		_private.spell_input.focus();
-
-		_private.process_incantation(spell);
 	}
 
 	return _public;
