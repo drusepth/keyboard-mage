@@ -1,19 +1,22 @@
-<div id="battle_scene">
+<div id="battle-scene">
 	<div id="enemies"></div>
 
-	<div id="spell_text"></div>
+	<div id="spell-text"></div>
 
-	<button id="cast_spell">Cast spell</button>
-	<input type="text" id="spell_input" />
-	<span id="spell_time_left"></span>
+	<button id="cast-spell">Cast spell</button>
+	<input type="text" id="spell-input" />
+	<div id="spell-time-left">
+		<span class="time-filler"></span>
+	</div>
+	<div id="results"></div>
 
-	<div class="spell_text"></div>
+	<div class="spell-text"></div>
 </div>
 
 <script>
 	$(document).ready(function () {
 
-		$('#cast_spell').click(function () {
+		$('#cast-spell').click(function () {
 			var chosen_spell = spells[Math.floor(Math.random() * spells.length)];
 			console.log('Attempting to cast ' + chosen_spell.name);
 

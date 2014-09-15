@@ -5,7 +5,7 @@ var spells = [
 		mp_cost: 30,
 		casting_time: 100,
 		cast: function (target) {
-			console.log('Successfully cast fireball!');
+			return 'Successfully cast Fireball!';
 		}
 	},
 
@@ -15,7 +15,7 @@ var spells = [
 		mp_const: 30,
 		casting_time: 100,
 		cast: function (target) {
-			console.log('Successfully cast lightning bolt');
+			return 'Successfully cast Lightning bolt!';
 		}
 	}
 

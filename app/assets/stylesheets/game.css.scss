@@ -3,7 +3,7 @@
 	padding: 0;
 }
 
-#game_container {
+#game-container {
 	position: relative;
 	background: blue;
 
@@ -13,30 +13,53 @@
 	margin: 0 auto;
 	margin-top: 20px;
 
-	#spell_text {
+	#spell-text {
 		position: absolute;
-		top: 0;
+		bottom: 70px;
+		left: 30px;
 
 		color: white;
 	}
 
-	#cast_spell {
+	#cast-spell {
 		position: absolute;
-		bottom: 0;
-		right: 0;
+		bottom: 40px;
+		left: 300px;
+
+		font-size: 20px;
 	}
 
-	#spell_input {
+	#spell-input {
 		position: absolute;
-		bottom: 0;
-		left: 0;
+		bottom: 40px;
+		left: 30px;
+
+		font-size: 20px;
 	}
 
-	#spell_time_left {
+	#spell-time-left {
 		position: absolute;
 		top: 0;
-		right: 0;
+		left: 0;
+
+		width: 100%;
 		
+		color: white;
+		border-bottom: 1px solid white;
+		height: 20px;
+		overflow: hidden;
+
+		.time-filler {
+			background: green;
+			display: inline-block;
+		}
+
+	}
+
+	#results {
+		position: absolute;
+		top: 30px;
+		left: 0px;
 		color: white;
 	}
 }
