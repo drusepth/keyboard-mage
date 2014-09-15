@@ -1,7 +1,10 @@
 <div id="game_container"></div>
 
 <script>
+var engine;
 $(document).ready(function () {
-	engine.show_template('battle');
+	engine = game_engine('#game_container');
+
+	engine.show_template(engine.initial_template);
 });
 </script>

@@ -1,4 +1,6 @@
 class GameTemplateController < ApplicationController
+  layout false
+
   def index
   end
 
