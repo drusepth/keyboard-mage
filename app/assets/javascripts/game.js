@@ -1,9 +1,7 @@
+var engine;
+
 $(document).ready(function () {
-	// Initialize game engine
-	var engine = game_engine();
-
-	engine.show_template($('body'), 'battle', {});
-
+	engine = game_engine();
 
 	$('#cast_spell').click(function () {
 		var chosen_spell = spells[Math.floor(Math.random() * spells.length)];

@@ -1,13 +1,8 @@
-<div id="game_container">
+<div id="game_container"></div>
 
-	<div id="enemies"></div>
-	
-	<div id="spell_text"></div>
-
-	<button id="cast_spell">Cast spell</button>
-	<input type="text" id="spell_input" />
-	<span id="spell_time_left"></span>
-
-	<div class="spell_text"></div>
-
-</div>
+<script>
+$(document).ready(function () {
+	engine = engine || game_engine();
+	engine.show_template($('#game_container'), 'battle', {});
+});
+</script>
