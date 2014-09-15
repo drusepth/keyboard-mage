@@ -2,12 +2,7 @@ $(document).ready(function () {
 	// Initialize game engine
 	var engine = game_engine();
 
-
-	$.get('templates/battle.mst', function(template) {
-	    var rendered = Mustache.render(template, {name: "Luke"});
-	    $('body').html(rendered);
-	});
-
+	engine.show_template($('body'), 'battle', {});
 
 
 	$('#cast_spell').click(function () {

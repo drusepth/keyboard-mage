@@ -15,6 +15,13 @@ var game_engine = function () {
 	_private.timer_frequency = 500; // ms
 	_private.timer_timestep = 7.5; // #todo math
 
+	_public.show_template = function (target, template, data) {
+		$.get('game_template/' + template, function (t) {
+			var rendered_template = Mustache.render(t, data);
+			target.html(rendered_template);
+		});
+	}
+
 	_public.cast_spell = function (spell) {
 		_private.incantation_display.text(spell.incantation);
 		_private.spell_input.focus();
