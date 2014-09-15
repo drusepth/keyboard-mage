@@ -1,6 +1,9 @@
-var game_engine = function () {
+var game_engine = function (game_container) {
 	var _public  = {},
 	    _private = {};
+
+	// DOM container for the game
+	_private.game_container = $(game_container);
 
 	// Display incantation text
 	_private.incantation_display = $('#spell_text');
@@ -15,7 +18,10 @@ var game_engine = function () {
 	_private.timer_frequency = 500; // ms
 	_private.timer_timestep = 7.5; // #todo math
 
-	_public.show_template = function (target, template, data) {
+	_public.show_template = function (template, data, target) {
+		// Default param for target to game container
+		target = (typeof target !== 'undefined' ? target : _private.game_container);
+
 		$.get('game_template/' + template, function (t) {
 			var rendered_template = Mustache.render(t, data);
 			target.html(rendered_template);
