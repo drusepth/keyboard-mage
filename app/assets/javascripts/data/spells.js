@@ -17,6 +17,16 @@ var spells = [
 		cast: function (target) {
 			return 'Successfully cast Lightning bolt!';
 		}
+	},
+
+	{
+		name: 'Magic missile',
+		incantation: 'Abra kadabra',
+		mp_const: 20,
+		casting_time: 50,
+		cast: function (target) {
+			return 'Successfully cast Magic missile!';
+		}
 	}
 
 ]
